@@ -2,8 +2,8 @@ const baseUrl = "http://localhost:3001"
 
 const findStaff= async () => {
     const response = await fetch(`${baseUrl}/staff`);
-    const colaborador = await response.json();
-    colaborador.forEach((colaborador) => {
+    const staffs = await response.json();
+    staffs.forEach((staff) => {
         document.getElementById("staffList").insertAdjacentHTML(
             "beforeend",
             `<div class="StaffListaItem">
@@ -15,7 +15,7 @@ const findStaff= async () => {
                 <div class="StaffListaItem_fone">${`Fone: ${staff.fone}`}</div>
                 <div class="StaffListaItem_rg">${`RG: ${staff.rg}`}</div>
                 <div class="StaffListaItem_cpf">${`CPF: ${staff.cpf}`}</div>
-                <div class="StaffListaItem_experienceEvents">${`Experiencia com Eventos: ${staff.experienceEvents}`}</div>
+                <div class="StaffListaItem_experienceEvents">${`Experiência com Eventos: ${staff.experienceEvents}`}</div>
                 <div class="StaffListaItem_adress">${`Endereço: ${staff.adress}`}</div>
             </div>
             <img class="StaffListaItem_pic" src=${staff.pic} alt=${`${staff.name}`}/>
@@ -24,16 +24,13 @@ const findStaff= async () => {
     });
 };
 
-const findByIdColaboradores = async () => {
+const findByIdColaborador = async () => {
     const id = document.getElementById("idStaff").value;
-
     const response = await fetch(`${baseUrl}/staff/find/${id}`);
-    
     const staff = await response.json();
+    const colaboradorEscolhidoDiv = document.getElementById("colaboradorEscolhido");
 
-    const colaboradorEncolhidoDiv = document.getElementById("staffEscolhido");
-
-    colaboradorEncolhidoDiv.innerHTML = `
+    colaboradorEscolhidoDiv.innerHTML = `
     <div class ="StaffCardItem">
         <div>
             <div class="StaffListaItem_name">${`Nome: ${staff.name}`}</div>
