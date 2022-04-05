@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kings Eventos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <div class="Home">
+        <div class="Home_header Header">
+            <div class="row">
+                <div class="Header_logo Logo">
+                    <img
+                        src="assets/logo.png"
+                        width="70px"
+                        alt="Logo Kings Eventos"
+                        class="Logo_icone"
+                    />
+                    <span class="Logo_title">Kings Eventos</span> 
+                </div>
+    
+                <div class="Header_options Options">
+                    <div class="Options_king King">
+                        <img
+                            src="assets/icons/lion-svgrepo-com.svg"
+                            width="40px"
+                            class="King_icone"
+                            alt="King"
+                        />    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Pesquisar Colaborador</h2>
+            <div class="colaborador-escolhido-espaco">
+                <div id="colaborador-escolhido-input-espaco">
+                    <input type="number" 
+                    id="idStaff" 
+                    placeholder="Digite o ID do colaborador e clique no botão"/>
+
+                    <button id="idStaffButton" onclick="findByIdStaffs()">PESQUISAR</button>
+                </div>
+            
+                <div id="colaboradorEscolhido"></div>
+            </div>
+        <h2>Colaboradores Cadastrados:</h2>
+        <div class="Home_container">
+            <div class="StaffLista" id="staffList"></div>
+        </div>
+    </div>
+</body>
+</html>

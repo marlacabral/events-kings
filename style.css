@@ -1,0 +1,10 @@
+img{
+    width: 100px;
+}
+
+.Home_container{
+    background: rgb(232, 232, 99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
